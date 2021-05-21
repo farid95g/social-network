@@ -1,4 +1,22 @@
 .sidebar {
-  border: 2px solid #000;
   grid-area: s;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.nav ul {
+  list-style-type: none;
+  padding-left: 15px;
+}
+
+li.item {
+  padding: 5px 0;
+}
+
+li.item a {
+  text-decoration: none;
+  color: #fff;
+}
+
+li.item a.active {
+  color: rgb(0, 255, 255);
 }

@@ -1,4 +1,9 @@
 .header {
-  border: 2px solid blue;
   grid-area: h;
+  background-color: rgba(0, 0, 0, .8);
+}
+
+.header img {
+  width: 70px;
+  height: 100%;
 }

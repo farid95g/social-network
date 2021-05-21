@@ -1,10 +1,29 @@
 import React from "react";
-import classes from "./Sidebar.module.css";
+import styles from "./Sidebar.module.css";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <aside className={classes.sidebar}>
-      <h5>Sidebar</h5>
+    <aside className={styles.sidebar}>
+      <nav className={styles.nav}>
+        <ul>
+          <li className={`${styles.item} ${styles.active}`}>
+            <NavLink to="/profile" activeClassName={styles.active}>Profile</NavLink>
+          </li>
+          <li className={styles.item}>
+            <NavLink to="/messages" activeClassName={styles.active}>Messages</NavLink>
+          </li>
+          <li className={styles.item}>
+            <NavLink to="/news" activeClassName={styles.active}>News</NavLink>
+          </li>
+          <li className={styles.item}>
+            <NavLink to="/music" activeClassName={styles.active}>Music</NavLink>
+          </li>
+          <li className={styles.item}>
+            <NavLink to="/settings" activeClassName={styles.active}>Settings</NavLink>
+          </li>
+        </ul>
+      </nav>
     </aside>
   );
 }
