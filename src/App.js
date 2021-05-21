@@ -3,6 +3,11 @@ import './App.css';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Profile from './components/Profile/Profile';
+import Messages from './components/Messages/Messages';
+import News from './components/News/News';
+import Music from './components/Music/Music';
+import Options from './components/Options/Options';
+import { Route } from "react-router-dom";
 
 function App() {
   return (
@@ -10,7 +15,11 @@ function App() {
       <Header />
       <Sidebar />
       <main className="app-wrapper-content">
-        <Profile />
+        <Route path="/profile" render={Profile} />
+        <Route path="/messages" render={Messages} />
+        <Route path="/news" render={News} />
+        <Route path="/music" render={Music} />
+        <Route path="/options" render={Options} />
       </main>
     </div>
   );

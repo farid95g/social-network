@@ -20,7 +20,7 @@ const Sidebar = () => {
             <NavLink to="/music" activeClassName={styles.active}>Music</NavLink>
           </li>
           <li className={styles.item}>
-            <NavLink to="/settings" activeClassName={styles.active}>Settings</NavLink>
+            <NavLink to="/options" activeClassName={styles.active}>Options</NavLink>
           </li>
         </ul>
       </nav>
