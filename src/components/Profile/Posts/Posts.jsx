@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Posts.module.css";
+import Post from './Post/Post';
 
 const Posts = () => {
   return (
@@ -13,29 +14,10 @@ const Posts = () => {
         </div>
       </div>
       <div className={styles.postsWrapper}>
-        <div className={styles.post}>
-          <img src="https://freesvg.org/img/Male-Avatar.png" alt="profile img" />
-          <span>Hello. How are you?</span>
-        </div>
-        <span>likes 12</span>
-
-        <div className={styles.post}>
-          <img src="https://freesvg.org/img/Male-Avatar.png" alt="profile img" />
-          <span>It's my first post</span>
-        </div>
-        <span>likes 11</span>
-
-        <div className={styles.post}>
-          <img src="https://freesvg.org/img/Male-Avatar.png" alt="profile img" />
-          <span>Bla bla</span>
-        </div>
-        <span>likes 54</span>
-
-        <div className={styles.post}>
-          <img src="https://freesvg.org/img/Male-Avatar.png" alt="profile img" />
-          <span>Ok, anyway</span>
-        </div>
-        <span>likes 6</span>
+        <Post message="Hello. How are you?" likesCount="12" />
+        <Post message="It's my first post" likesCount="11" />
+        <Post message="Bla bla" likesCount="54" />
+        <Post message="Ok, anyway" likesCount="6" />
       </div>
     </div>
   );
