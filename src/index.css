@@ -20,3 +20,7 @@ code {
 input:focus, textarea:focus, button:focus {
   outline: none;
 }
+
+ul {
+  list-style-type: none;
+}

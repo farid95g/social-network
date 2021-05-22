@@ -12,5 +12,6 @@
 
 .app-wrapper-content {
   grid-area: c;
+  padding: 0 2%;
   padding-top: 15px;
 }

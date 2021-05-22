@@ -1,0 +1,49 @@
+.messages {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.messageSenders {
+  border-right: 1px solid rgba(0, 0, 0, .3);
+}
+
+.messageSenders .sender {
+  padding: 5px 0;
+}
+
+.messageSenders .sender a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, .75);
+}
+
+.sender a.active {
+  color: rgb(0, 0, 255);
+  font-weight: bold;
+}
+
+.messagesBlock {
+  padding-left: 15px;
+}
+
+.messagesBlock > div {
+  padding: 10px 0;
+}
+
+.messagesBlock > div span {
+  padding: 5px 15px;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.messagesBlock > div:nth-child(2n + 1) span {
+  background-color: blue;
+}
+
+.messagesBlock > div:nth-child(2n) {
+  text-align: right;
+}
+
+.messagesBlock > div:nth-child(2n) span {
+  background-color: rgb(7, 201, 226);
+}
