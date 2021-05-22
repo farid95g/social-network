@@ -1,11 +1,12 @@
 .sidebar {
   grid-area: s;
   background-color: rgba(0, 0, 0, .5);
+  height: calc(100vh - 60px);
 }
 
 .nav ul {
   list-style-type: none;
-  padding-left: 15px;
+  padding: 15px 0 15px 15px;
 }
 
 li.item {

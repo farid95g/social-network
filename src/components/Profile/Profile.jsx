@@ -1,10 +1,13 @@
 import React from "react";
 import styles from "./Profile.module.css";
+import ProfileInfo from './ProfileInfo/ProfileInfo';
+import Posts from './Posts/Posts';
 
 const Profile = () => {
   return (
-    <section>
-      <h5>Profile</h5>
+    <section className={styles.profile}>
+      <ProfileInfo />
+      <Posts />
     </section>
   );
 }
