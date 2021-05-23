@@ -9,14 +9,14 @@ import Music from './components/Music/Music';
 import Options from './components/Options/Options';
 import { Route } from "react-router-dom";
 
-function App() {
+function App(props) {
   return (
     <div className="app-wrapper">
       <Header />
       <Sidebar />
       <main className="app-wrapper-content">
-        <Route path="/profile" render={Profile} />
-        <Route path="/messages" render={Messages} />
+        <Route path="/profile" render={() => <Profile state={props.state.profilePage} />} />
+        <Route path="/messages" render={() => <Messages state={props.state.messagesPage} />} />
         <Route path="/news" render={News} />
         <Route path="/music" render={Music} />
         <Route path="/options" render={Options} />

@@ -3,11 +3,11 @@ import styles from "./Profile.module.css";
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 import Posts from './Posts/Posts';
 
-const Profile = () => {
+const Profile = (props) => {
   return (
     <section className={styles.profile}>
       <ProfileInfo />
-      <Posts />
+      <Posts posts={props.state.posts} />
     </section>
   );
 }

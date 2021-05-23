@@ -2,7 +2,10 @@ import React from "react";
 import styles from "./Posts.module.css";
 import Post from './Post/Post';
 
-const Posts = () => {
+const Posts = (props) => {
+  const posts = props.posts
+    .map(p => <Post key={p.id} id={p.id} message={p.message} likesCount={p.likesCount} />);
+  
   return (
     <div className={styles.posts}>
       <h3>My Posts</h3>
@@ -14,10 +17,7 @@ const Posts = () => {
         </div>
       </div>
       <div className={styles.postsWrapper}>
-        <Post message="Hello. How are you?" likesCount="12" />
-        <Post message="It's my first post" likesCount="11" />
-        <Post message="Bla bla" likesCount="54" />
-        <Post message="Ok, anyway" likesCount="6" />
+        { posts }
       </div>
     </div>
   );
