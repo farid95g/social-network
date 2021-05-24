@@ -4,14 +4,11 @@
   margin: 15px 0;
 }
 
-.newPost button {
+.newPost button, .newPost button:focus {
   padding: 8px 20px;
-  border: none;
-  outline: none;
   border-radius: .2rem;
   font-size: .8rem;
   font-weight: 600;
-  cursor: pointer;
 }
 
 .newPost button:first-child {

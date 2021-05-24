@@ -8,6 +8,12 @@ const Messages = (props) => {
     .map(s => <Sender key={s.id} id={s.id} name={s.name} />);
   const messages = props.state.messages
     .map(m => <Message key={m.id} id={m.id} message={m.message} />);
+  
+  let newMessage = React.createRef();
+  const sendMessage = () => {
+    let message = newMessage.current.value;
+    console.log(message);
+  }
 
   return (
     <section className={styles.messages}>
@@ -17,7 +23,13 @@ const Messages = (props) => {
         </ul>
       </div>
       <div className={styles.messagesBlock}>
-        { messages }
+        {messages}
+        <div className={styles.newMessage}>
+          <textarea ref={newMessage}></textarea>
+          <div>
+            <button onClick={sendMessage}>Send</button>
+          </div>
+        </div>
       </div>
     </section>
   );
