@@ -7,7 +7,8 @@ const state = {
       { id: 2, message: "It's my first post", likesCount: 11 },
       { id: 3, message: "Bla bla", likesCount: 54 },
       { id: 4, message: "Ok, anyway", likesCount: 6 }
-    ]
+    ],
+    newPostText: ''
   },
   messagesPage: {
     senders: [
@@ -28,11 +29,20 @@ const state = {
   }
 };
 
-export const addPost = (postMessage) => {
+window.state = state;
+
+export const updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+}
+
+export const addPost = () => {
   let newPost = {
-    id: state.profilePage.posts.length + 1, message: postMessage, likesCount: 0
+    id: state.profilePage.posts.length + 1,
+    message: state.profilePage.newPostText,
+    likesCount: 0
   };
   state.profilePage.posts.push(newPost);
+  state.profilePage.newPostText = '';
   renderEntireTree(state);
 }
 

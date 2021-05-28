@@ -7,17 +7,21 @@ const Posts = (props) => {
     .map(p => <Post key={p.id} id={p.id} message={p.message} likesCount={p.likesCount} />);
 
   let newPost = React.createRef();
+
+  const updateNewPostText = () => {
+    let newText = newPost.current.value;
+    props.updateNewPostText(newText)
+  }
+
   const addNewPost = () => {
-    let post = newPost.current.value;
-    props.addPost(post);
-    newPost.current.value = '';
+    props.addPost();
   }
   
   return (
     <div className={styles.posts}>
       <h3>My Posts</h3>
       <div className={styles.newPost}>
-        <textarea ref={newPost}></textarea>
+        <textarea ref={newPost} onChange={updateNewPostText} value={props.newPostText}></textarea>
         <div>
           <button className={styles.btnAdd} onClick={addNewPost}>Add post</button>
           <button className={styles.btnRemove}>Remove post</button>
