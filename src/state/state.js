@@ -27,7 +27,8 @@ const state = {
       { id: 3, message: "Fine, thanks, and you?" },
       { id: 4, message: "Ok" },
       { id: 5, message: "No problem" }
-    ]
+    ],
+    newMessageText: ''
   }
 };
 
@@ -44,6 +45,21 @@ export const addPost = () => {
   };
   state.profilePage.posts.push(newPost);
   state.profilePage.newPostText = '';
+  renderEntireTree(state);
+}
+
+export const updateMessageText = (newMessage) => {
+  state.messagesPage.newMessageText = newMessage;
+  renderEntireTree(state);
+}
+
+export const addMessage = () => {
+  let newMessage = {
+    id: state.messagesPage.messages.length + 1,
+    message: state.messagesPage.newMessageText
+  };
+  state.messagesPage.messages.push(newMessage);
+  state.messagesPage.newMessageText = '';
   renderEntireTree(state);
 }
 
