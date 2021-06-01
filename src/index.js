@@ -3,8 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
-import { addPost, subscribe, updateNewPostText, updateMessageText, addMessage } from './state/state';
-import state from "./state/state";
+import store from "./state/state";
 
 export const renderEntireTree = (state) => {
   ReactDOM.render(
@@ -12,10 +11,10 @@ export const renderEntireTree = (state) => {
       <Router>
         <App
           state={state}
-          addPost={addPost}
-          updateNewPostText={updateNewPostText}
-          updateMessageText={updateMessageText}
-          addMessage={addMessage}
+          addPost={store.addPost.bind(store)}
+          updateNewPostText={store.updateNewPostText.bind(store)}
+          updateMessageText={store.updateMessageText.bind(store)}
+          addMessage={store.addMessage.bind(store)}
         />
       </Router>
     </React.StrictMode>,
@@ -23,5 +22,5 @@ export const renderEntireTree = (state) => {
   );
 }
 
-renderEntireTree(state);
-subscribe(renderEntireTree);
+renderEntireTree(store.getState());
+store.subscribe(renderEntireTree);
