@@ -7,7 +7,7 @@ const Profile = (props) => {
   return (
     <section className={styles.profile}>
       <ProfileInfo />
-      <Posts posts={props.state.posts} addPost={props.addPost} newPostText={props.state.newPostText} updateNewPostText={props.updateNewPostText} />
+      <Posts posts={props.state.posts} newPostText={props.state.newPostText} dispatch={props.dispatch} />
     </section>
   );
 }

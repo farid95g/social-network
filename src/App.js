@@ -15,18 +15,12 @@ function App(props) {
       <Header />
       <Sidebar />
       <main className="app-wrapper-content">
-        <Route
-          path="/profile"
-          render={() => <Profile
+        <Route path="/profile" render={() => <Profile
             state={props.state.profilePage}
-            addPost={props.addPost}
-            updateNewPostText={props.updateNewPostText} />} />
-        <Route
-          path="/messages"
-          render={() => <Messages
+            dispatch={props.dispatch} />} />
+        <Route path="/messages" render={() => <Messages
             state={props.state.messagesPage}
-            updateMessageText={props.updateMessageText}
-            addMessage={props.addMessage} />} />
+            dispatch={props.dispatch} />} />
         <Route path="/news" render={News} />
         <Route path="/music" render={Music} />
         <Route path="/options" render={Options} />

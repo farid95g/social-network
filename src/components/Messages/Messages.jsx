@@ -13,11 +13,12 @@ const Messages = (props) => {
 
   const updateMessageText = () => {
     let newMessageText = newMessage.current.value;
-    props.updateMessageText(newMessageText);
+    let action = { type: "UPDATE-MESSAGE-TEXT", newMessage: newMessageText };
+    props.dispatch(action);
   }
 
   const sendMessage = () => {
-    props.addMessage();
+    props.dispatch({ type: "ADD-MESSAGE" });
   }
 
   return (
