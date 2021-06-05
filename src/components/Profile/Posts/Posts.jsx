@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Posts.module.css";
 import Post from './Post/Post';
+import { updateNewPostTextActionCreator, addPostActionCreater } from './../../../state/state';
 
 const Posts = (props) => {
   const posts = props.posts
@@ -10,12 +11,12 @@ const Posts = (props) => {
 
   const updateNewPostText = () => {
     let newText = newPost.current.value;
-    let action = { type: "UPDATE-NEW-POST-TEXT", newText: newText };
+    let action = updateNewPostTextActionCreator(newText);
     props.dispatch(action);
   }
 
   const addNewPost = () => {
-    props.dispatch({ type: "ADD-POST" });
+    props.dispatch(addPostActionCreater());
   }
   
   return (

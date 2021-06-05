@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Messages.module.css";
 import Message from './Message/Message';
 import Sender from "./Sender/Sender";
+import { updateNewMessageTextActionCreator, addMessageActionCreater } from './../../state/state';
 
 const Messages = (props) => {
   const senders = props.state.senders
@@ -13,12 +14,12 @@ const Messages = (props) => {
 
   const updateMessageText = () => {
     let newMessageText = newMessage.current.value;
-    let action = { type: "UPDATE-MESSAGE-TEXT", newMessage: newMessageText };
+    let action = updateNewMessageTextActionCreator(newMessageText);
     props.dispatch(action);
   }
 
   const sendMessage = () => {
-    props.dispatch({ type: "ADD-MESSAGE" });
+    props.dispatch(addMessageActionCreater());
   }
 
   return (
@@ -29,7 +30,7 @@ const Messages = (props) => {
         </ul>
       </div>
       <div className={styles.messagesBlock}>
-        {messages}
+        { messages }
         <div className={styles.newMessage}>
           <textarea ref={newMessage} onChange={updateMessageText} value={props.state.newMessageText}></textarea>
           <div>
