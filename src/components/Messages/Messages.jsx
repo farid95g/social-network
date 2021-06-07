@@ -2,24 +2,26 @@ import React from "react";
 import styles from "./Messages.module.css";
 import Message from './Message/Message';
 import Sender from "./Sender/Sender";
-import { updateNewMessageTextActionCreator, addMessageActionCreater } from './../../state/state';
+import { updateNewMessageBodyCreator, sendMessageCreator } from './../../state/state';
 
 const Messages = (props) => {
-  const senders = props.state.senders
+  let state = props.store.getState().messagesPage;
+
+  const senders = state.senders
     .map(s => <Sender key={s.id} id={s.id} name={s.name} />);
-  const messages = props.state.messages
+  const messages = state.messages
     .map(m => <Message key={m.id} id={m.id} message={m.message} />);
   
-  let newMessage = React.createRef();
+  const newMessageBody = state.newMessageBody;
 
-  const updateMessageText = () => {
-    let newMessageText = newMessage.current.value;
-    let action = updateNewMessageTextActionCreator(newMessageText);
-    props.dispatch(action);
+  const onNewMessageChange = e => {
+    let body = e.target.value;
+    let action = updateNewMessageBodyCreator(body);
+    props.store.dispatch(action);
   }
 
-  const sendMessage = () => {
-    props.dispatch(addMessageActionCreater());
+  const onSendMessageClick = () => {
+    props.store.dispatch(sendMessageCreator());
   }
 
   return (
@@ -32,9 +34,9 @@ const Messages = (props) => {
       <div className={styles.messagesBlock}>
         { messages }
         <div className={styles.newMessage}>
-          <textarea ref={newMessage} onChange={updateMessageText} value={props.state.newMessageText}></textarea>
+          <textarea onChange={onNewMessageChange} value={newMessageBody} placeholder="Enter your message"></textarea>
           <div>
-            <button onClick={sendMessage}>Send</button>
+            <button onClick={onSendMessageClick}>Send</button>
           </div>
         </div>
       </div>

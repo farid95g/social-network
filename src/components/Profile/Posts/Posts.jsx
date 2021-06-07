@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Posts.module.css";
 import Post from './Post/Post';
-import { updateNewPostTextActionCreator, addPostActionCreater } from './../../../state/state';
+import { updateNewPostTextActionCreator, addPostActionCreator } from './../../../state/state';
 
 const Posts = (props) => {
   const posts = props.posts
@@ -16,7 +16,7 @@ const Posts = (props) => {
   }
 
   const addNewPost = () => {
-    props.dispatch(addPostActionCreater());
+    props.dispatch(addPostActionCreator());
   }
   
   return (
