@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Messages.module.css";
 import Message from './Message/Message';
 import Sender from "./Sender/Sender";
-import { updateNewMessageBodyCreator, sendMessageCreator } from './../../state/messages-reducer';
+import { updateNewMessageBodyCreator, sendMessageCreator } from '../../redux/messages-reducer';
 
 const Messages = (props) => {
   let state = props.store.getState().messagesPage;

@@ -3,13 +3,14 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
-import store from "./state/state";
+import store from "./redux/redux-store";
 
 export const renderEntireTree = (state) => {
+  console.log(store);
   ReactDOM.render(
     <React.StrictMode>
       <Router>
-        <App state={state} dispatch={store.dispatch.bind(store)} store={store} />
+        <App state={state} dispatch={ store.dispatch.bind(store)} store={store} />
       </Router>
     </React.StrictMode>,
     document.getElementById("root")
@@ -17,4 +18,4 @@ export const renderEntireTree = (state) => {
 }
 
 renderEntireTree(store.getState());
-store.subscribe(renderEntireTree);
+store.subscribe(() => renderEntireTree(store.getState()));
