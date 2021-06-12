@@ -1,31 +1,27 @@
 import React from "react";
 import styles from "./Posts.module.css";
 import Post from './Post/Post';
-import { updateNewPostTextActionCreator, addPostActionCreator } from '../../../redux/profile-reducer';
 
 const Posts = (props) => {
   const posts = props.posts
     .map(p => <Post key={p.id} id={p.id} message={p.message} likesCount={p.likesCount} />);
 
-  let newPost = React.createRef();
-
-  const updateNewPostText = () => {
-    let newText = newPost.current.value;
-    let action = updateNewPostTextActionCreator(newText);
-    props.dispatch(action);
+  const onPostChange = e => {
+    let text = e.target.value;
+    props.updateNewPostText(text);
   }
 
-  const addNewPost = () => {
-    props.dispatch(addPostActionCreator());
+  const onAddPost = () => {
+    props.addPost();
   }
   
   return (
     <div className={styles.posts}>
       <h3>My Posts</h3>
       <div className={styles.newPost}>
-        <textarea ref={newPost} onChange={updateNewPostText} value={props.newPostText}></textarea>
+        <textarea onChange={onPostChange} value={props.newPostText}></textarea>
         <div>
-          <button className={styles.btnAdd} onClick={addNewPost}>Add post</button>
+          <button className={styles.btnAdd} onClick={onAddPost}>Add post</button>
           <button className={styles.btnRemove}>Remove post</button>
         </div>
       </div>
