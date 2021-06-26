@@ -3,14 +3,7 @@
 .user {
   display: flex;
   margin-bottom: 30px;
-}
-
-.getUsers, .getUsers:focus {
-  font-size: 15px;
-  margin-bottom: 25px;
   font-family: 'Ubuntu', sans-serif;
-  border: 1px solid rgba(0, 0, 0, .5);
-  padding: 5px 10px;
 }
 
 .user > div:first-child {
