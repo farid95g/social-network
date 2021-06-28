@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
 
+.pagination {
+  margin-bottom: 25px;
+}
+
+.pagination button {
+  border: 1px solid blue;
+  padding: 5px 10px;
+  font-family: 'Ubuntu', sans-serif;
+  border-radius: 5px;
+  color: blue;
+}
+
+.pagination button:not(:last-child) {
+  margin-right: 10px;
+}
+
+.selectedPage {
+  border: none;
+  background-color: blue;
+  color: #fff !important;
+}
+
 .user {
   display: flex;
   margin-bottom: 30px;
