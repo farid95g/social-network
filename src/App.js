@@ -16,7 +16,7 @@ function App() {
       <Header />
       <Sidebar />
       <main className="app-wrapper-content">
-        <Route path="/profile" render={() => <ProfileContainer />} />
+        <Route path="/profile/:userId?" render={() => <ProfileContainer />} />
         <Route path="/messages" render={() => <MessagesContainer />} />
         <Route path="/users" render={() => <UsersContainer />} />
         <Route path="/news" render={News} />
