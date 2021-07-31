@@ -7,3 +7,17 @@
   width: 70px;
   height: 100%;
 }
+
+.loginBlock {
+  float: right;
+}
+
+.loginBlock a, .loginBlock span {
+  color: #fff;
+  height: 100%;
+  line-height: 60px;
+  text-decoration: none;
+  padding-right: 15px;
+  display: inline-block;
+  font-size: 18px;
+}
