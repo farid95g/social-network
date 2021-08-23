@@ -1,4 +1,3 @@
-import React from "react";
 import Messages from "./Messages";
 import {
   updateNewMessageBodyCreator,
@@ -8,7 +7,8 @@ import { connect } from "react-redux";
 
 const mapStateToProps = (state) => {
   return {
-    state: state.messagesPage
+    state: state.messagesPage,
+    isAuth: state.auth.isAuth
    }
 }
 

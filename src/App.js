@@ -9,6 +9,7 @@ import Music from './components/Music/Music';
 import Options from './components/Options/Options';
 import UsersContainer from "./components/Users/UsersContainer";
 import { Route } from "react-router-dom";
+import LoginPage from './components/Login/Login';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/news" render={News} />
         <Route path="/music" render={Music} />
         <Route path="/options" render={Options} />
+        <Route path="/login" render={LoginPage} />
       </main>
     </div>
   );
