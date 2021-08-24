@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Messages.module.css";
 import Message from './Message/Message';
 import Sender from "./Sender/Sender";
-import { Redirect } from "react-router-dom";
 
 const Messages = (props) => {
   const senders = props.state.senders
@@ -18,8 +17,6 @@ const Messages = (props) => {
   const onSendMessage = () => {
     props.sendMessage();
   }
-
-  if (!props.isAuth) return <Redirect to="/login" />;
 
   return (
     <section className={styles.messages}>
