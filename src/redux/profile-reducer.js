@@ -90,6 +90,7 @@ export const updateStatus = (status) => (dispatch) => {
   profileAPI.updateStatus(status)
     .then((response) => {
       if (response.resultCode === 0) {
+        debugger;
         dispatch(updateUserStatus(status));
       }
     });;
