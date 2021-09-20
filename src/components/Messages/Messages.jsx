@@ -3,6 +3,10 @@ import styles from "./Messages.module.css";
 import Message from "./Message/Message";
 import Sender from "./Sender/Sender";
 import { Field, reduxForm } from "redux-form";
+import { Textarea } from "../common/FormsControls/FormsControls";
+import { required, maxLengthCreator } from "./../../utils/validators/validators";
+
+const maxLength50 = maxLengthCreator(50);
 
 const Messages = (props) => {
   const senders = props.state.senders.map((s) => (
@@ -33,9 +37,10 @@ const AddMessageForm = ({ handleSubmit }) => {
   return (
     <form onSubmit={handleSubmit}>
       <Field
-        component="textarea"
+        component={Textarea}
         name="newMessageBody"
         placeholder="Enter your message"
+        validate={[ required, maxLength50 ]}
       />
       <div>
         <button type="submit">Send</button>
