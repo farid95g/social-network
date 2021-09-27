@@ -3,6 +3,8 @@ import { Field, reduxForm } from "redux-form";
 import { required } from "../../utils/validators/validators";
 import { Input } from "../common/FormsControls/FormsControls";
 import styles from "./Login.module.css";
+import { connect } from "react-redux";
+import { login } from "../../redux/auth-reducer";
 
 const LoginForm = (props) => {
   const { handleSubmit } = props;
@@ -44,7 +46,7 @@ const LoginReduxForm = reduxForm({ form: "login" })(LoginForm);
 
 const Login = (props) => {
   const onSubmit = (formData) => {
-    console.log(formData);
+    props.login(formData);
   }
 
   return (
@@ -55,4 +57,6 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+const LoginContainer = connect({ }, {login})(Login)
+
+export default LoginContainer;
