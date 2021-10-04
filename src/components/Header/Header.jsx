@@ -12,7 +12,13 @@ const Header = (props) => {
         {
           props.isAuth
             ?
-            <span>{props.login}</span>
+            <div>
+              <span>{props.login}</span>
+              <button
+                onClick={props.logout}
+                style={{ color: "#fff", fontSize: "1rem", border: "1px solid #fff", padding: "5px 10px", marginRight: "1rem" }}
+              >Logout</button>
+            </div>
             :
             <NavLink to={"/login"}>Login</NavLink>
         }

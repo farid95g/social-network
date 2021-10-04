@@ -23,7 +23,7 @@ function App() {
         <Route path="/news" render={News} />
         <Route path="/music" render={Music} />
         <Route path="/options" render={Options} />
-        <Route path="/login" render={LoginPage} />
+        <Route path="/login" render={() => <LoginPage />} />
       </main>
     </div>
   );
