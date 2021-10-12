@@ -28,14 +28,12 @@ class ProfileContainer extends React.Component {
     // }
 
     return (
-      !this.props.match.params.userId
-        ? <Redirect to = "/login" />
-        : <Profile
-          {...this.props}
-          profile={this.props.profile}
-          status={this.props.status}
-          updateStatus={this.props.updateStatus}
-        />
+      <Profile
+        {...this.props}
+        profile={this.props.profile}
+        status={this.props.status}
+        updateStatus={this.props.updateStatus}
+      />
     );
   }
 }
